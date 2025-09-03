@@ -1,14 +1,9 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        map=dict()
-        for i in nums:
-            if i in map:
-                map[i]+=1
-            else:
-                map[i]=1
-        values=list(map.values())
-        for i in values:
-            if i!=1:
+        hash_set=set()
+        for element in nums:
+            if element in hash_set:
                 return True
+            else:
+                hash_set.add(element)
         return False
-        
